@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>灵蛇贺岁2025：新春抽卡大冒险</title>
+</head>
+<body>
+  <div id="logo">
+    <img src="logo.png" alt="游戏Logo" width="100">
+  </div>
+  <h1>灵蛇贺岁2025：新春抽卡大冒险</h1>
+  <div id="currencyDisplay"><i class="fas fa-coins"></i><span id="currencySpan">1000</span> 货币</div>
+  <div id="mainGame">
+    <div id="drawResult"></div>
+    <div id="buttons">
+      <button id="drawBtn"><i class="fas fa-gift"></i>点击抽卡</button>
+      <button id="viewBackpackBtn"><i class="fas fa-suitcase"></i>查看背包</button>
+      <button id="viewCardPoolBtn"><i class="fas fa-list"></i>卡池信息</button>
+      <button id="viewHistoryBtn"><i class="fas fa-history"></i>抽卡历史</button>
+      <button id="clearDataBtn"><i class="fas fa-trash"></i>清除数据</button>
+    </div>
+    <div id="cardPoolInfo" style="display: none;">
+      <h3>卡池信息</h3>
+      <table id="cardPoolTable">
+        <thead>
+          <tr>
+            <th>稀有等级</th>
+            <th>名称</th>
+            <th>描述</th>
+            <th>概率</th>
+            <th>价值</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="backpackInfo" style="display: none;">
+      <h3>我的背包</h3>
+      <ul id="backpackList"></ul>
+    </div>
+    <div id="historyInfo" style="display: none;">
+      <h3>抽卡历史</h3>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+  <div id="copyright">Copyright©2025 曹恩答 版权所有<br>每次抽卡消耗100货币 抽取4张卡牌 保底1张R级卡<br>当前版本 1.2 （测试版）</div>
+  <audio id="drawSound" src="ck.mp3"></audio>
+  <audio id="sellSound" src="cs.mp3"></audio>
+  <div id="successPopup" style="display: none;">
+    <div id="successPopupContent">
+      <p id="successPopupMessage"></p>
+      <button id="successPopupCloseBtn">关闭</button>
+    </div>
+  </div>
+  <script src="cards.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

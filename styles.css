@@ -1,0 +1,310 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #e74c3c;
+}
+
+#currencyDisplay {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#mainGame {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+li img {
+  margin: 0 10px;
+}
+
+/* 响应式布局 */
+@media (max-width: 600px) {
+  #mainGame {
+    padding: 10px;
+  }
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* 卡牌图标样式及不同稀有度的边框颜色 */
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+.card-icon.N {
+  border: 2px solid #808080; /* 灰色边框 */
+}
+.card-icon.R {
+  border: 2px solid #008000; /* 绿色边框 */
+}
+.card-icon.SR {
+  border: 2px solid #FFD700; /* 金色边框 */
+}
+.card-icon.SSR {
+  border: 2px solid #ff0000; /* 红色边框 */
+}
+
+/* 抽卡结果中的卡牌图标动画 */
+.draw-result-icon {
+  animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 背包中的卡牌图标动画 */
+.backpack-icon {
+  animation: bounce 1s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.cardDetails {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logo {
+  margin-bottom: 10px;
+}
+
+button i {
+  margin-right: 5px;
+}
+
+#copyright {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #888;
+}
+
+#clearDataBtn {
+  background-color: #e74c3c;
+}
+
+/* 抽卡结果区域样式 */
+#drawResult {
+  margin-bottom: 20px;
+}
+
+/* 卡池信息表格样式 */
+#cardPoolInfo {
+  margin-bottom: 20px;
+}
+
+/* 背包列表样式 */
+#backpackInfo {
+  margin-bottom: 20px;
+}
+
+/* 历史记录列表样式 */
+#historyInfo {
+  margin-bottom: 20px;
+}
+
+/* 抽卡按钮样式 */
+#drawBtn {
+  background-color: #2ecc71;
+}
+
+/* 查看卡池信息按钮样式 */
+#viewCardPoolBtn {
+  background-color: #f1c40f;
+}
+
+/* 查看背包按钮样式 */
+#viewBackpackBtn {
+  background-color: #3498db;
+}
+
+/* 查看历史记录按钮样式 */
+#viewHistoryBtn {
+  background-color: #9b59b6;
+}
+
+/* 清除数据按钮样式 */
+#clearDataBtn {
+  background-color: #e74c3c;
+}
+
+
+/* 卡牌详情弹窗中的按钮样式 */
+.cardDetails button {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+#successPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#successPopupContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#successPopupMessage {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#successPopupCloseBtn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#successPopupCloseBtn:hover {
+  background-color: #2980b9;
+}
+.popup-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #2980b9;
+}
